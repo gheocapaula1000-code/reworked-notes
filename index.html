@@ -17,6 +17,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="install.css">
+  <link rel="stylesheet" href="nav.css">
 </head>
 <body>
   <header>
@@ -28,7 +29,7 @@
   </header>
 
   <main class="container">
-    <div class="card" id="formCard">
+    <div class="card tab-pane" id="formCard" data-tab="nuova">
       <label for="ideaText">Nuova idea</label>
       <textarea id="ideaText" placeholder="Descrivi l’idea al volo...&#10;es. giacca denim cropped con tasche asimmetriche da jeans thrift, stile deconstructed..."></textarea>
 
@@ -62,17 +63,38 @@
       <p class="hint">Le idee restano solo su questo telefono, anche senza rete.</p>
     </div>
 
-    <div id="ideasList"></div>
-    <button type="button" id="exportBtn" class="secondary" hidden>Copia tutte le idee</button>
+    <section class="tab-pane" data-tab="idee" aria-label="Idee">
+      <div id="ideasList"></div>
+      <button type="button" id="exportBtn" class="secondary" hidden>Copia tutte le idee</button>
+    </section>
+
+    <section class="info-panel tab-pane" data-tab="info" aria-label="Info">
+      <div class="card">
+        <h2>Reworked Notes</h2>
+        <p>Annoti al volo le idee per capi reworked: descrizione, tipo di capo, stile e una foto di ispirazione.</p>
+        <ul class="info-list">
+          <li>Le idee restano solo su questo telefono, anche senza rete.</li>
+          <li>Con «Copia tutte le idee» le incolli in WhatsApp, email o note.</li>
+          <li>Se cancelli i dati del browser le idee si perdono: copiale ogni tanto.</li>
+        </ul>
+        <button type="button" class="install-btn info-install" data-install hidden>⤓ Metti in home</button>
+      </div>
+    </section>
   </main>
 
-  <footer class="pigi-footer">
+  <footer class="pigi-footer tab-pane" data-tab="info">
     <p><strong>Pi.Gi Service</strong> · Via Guido Reni 8, 35133 Padova (PD) · P.IVA 05770260288</p>
     <p><a href="mailto:info@pigiservice.com">info@pigiservice.com</a> · PEC <a href="mailto:pigiservice@pec.it">pigiservice@pec.it</a> · <a href="tel:+393520966114">+39 352 0966114</a></p>
     <p class="pigi-links"><a href="privacy.html">Privacy</a> · <a href="termini.html">Termini</a> · <a href="cookie.html">Cookie</a></p>
   </footer>
 
   <button class="fab" id="fab" aria-label="Nuova idea">+</button>
+
+  <nav class="bottom-nav" id="bottomNav" data-max="899" aria-label="Sezioni">
+    <button type="button" data-go="nuova" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg><span>Nuova</span></button>
+    <button type="button" data-go="idee"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2V17h6v-.3c0-.8.4-1.5 1-2A7 7 0 0 0 12 2Z"/></svg><span>Idee</span><b class="nav-badge" id="ideasBadge" hidden></b></button>
+    <button type="button" data-go="info"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg><span>Info</span></button>
+  </nav>
 
   <div class="install-sheet" id="installSheet" hidden role="dialog" aria-modal="true" aria-labelledby="installTitle">
     <div class="install-card">
@@ -96,6 +118,7 @@
     </div>
   </div>
 
+  <script src="nav.js"></script>
   <script src="app.js"></script>
   <script src="install.js"></script>
 </body>

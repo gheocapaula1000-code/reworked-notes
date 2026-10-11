@@ -126,3 +126,23 @@ select {
 }
 select option { background: #242836; color: #e8eaed; }
 input[type=file] { font-size: .9rem; }
+
+/* Sezioni a schede sul telefono (barra in basso). Da 900px tutto visibile come prima. */
+.info-panel { display: none; }
+.only-mobile { display: none; }
+.info-panel h2 { font-size: 1.1rem; margin-bottom: .5rem; }
+.info-panel p { font-size: .95rem; line-height: 1.55; margin-bottom: .8rem; }
+.info-list { font-size: .9rem; line-height: 1.55; color: var(--muted); padding-left: 1.1rem; margin-bottom: 1rem; }
+.info-list li { margin-bottom: .3rem; }
+@media (max-width: 899px) {
+  .info-panel { display: block; }
+  .only-mobile { display: inline-flex; }
+  .only-wide { display: none; }
+  .fab { display: none; }
+  body:not([data-tab="nuova"]) [data-tab="nuova"],
+  body:not([data-tab="idee"]) [data-tab="idee"],
+  body:not([data-tab="info"]) [data-tab="info"] { display: none !important; }
+  .empty-link { align-items: center; min-height: 44px; margin-top: .8rem; padding: 0 1.1rem; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; }
+  .pigi-footer { border-top: 0; }
+  .toast { bottom: calc(88px + env(safe-area-inset-bottom)); }
+}

@@ -42,10 +42,11 @@ function saveIdeas() {
 }
 
 function render() {
+  if (window.navBadge) window.navBadge('ideasBadge', ideas.length);
   countEl.textContent = ideas.length ? `${ideas.length} ${ideas.length === 1 ? 'idea' : 'idee'}` : '';
   exportBtn.hidden = !ideas.length;
   if (!ideas.length) {
-    ideasList.innerHTML = '<div class="empty">Nessuna idea ancora.<br>Scrivi qui sopra e premi «Salva idea».</div>';
+    ideasList.innerHTML = '<div class="empty">Nessuna idea ancora.<br><span class="only-wide">Scrivi qui sopra e premi «Salva idea».</span><a href="#nuova" class="only-mobile empty-link">Scrivi la prima idea</a></div>';
     return;
   }
   ideasList.innerHTML = ideas.map((idea, i) => `
@@ -115,7 +116,7 @@ saveBtn.onclick = async () => {
     ideas.unshift(idea);
     if (saveIdeas()) {
       resetForm();
-      toast('Idea salvata');
+      toast(window.matchMedia('(max-width: 899px)').matches ? 'Idea salvata: la trovi in «Idee»' : 'Idea salvata');
     } else {
       ideas.shift();
       render();
@@ -134,6 +135,7 @@ function resetForm() {
 }
 
 fab.onclick = () => {
+  if (window.goTab) window.goTab('nuova');
   formCard.scrollIntoView({ behavior: 'smooth' });
   ideaText.focus();
 };
