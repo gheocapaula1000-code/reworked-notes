@@ -1,4 +1,4 @@
-// Reworked Notes — idee di abbigliamento reworked al volo (dati solo su questo dispositivo)
+// Vaghezze Notes — idee di abbigliamento reworked al volo (dati solo su questo dispositivo)
 const ideaText = document.getElementById('ideaText');
 const itemType = document.getElementById('itemType');
 const style = document.getElementById('style');

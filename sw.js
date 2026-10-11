@@ -1,6 +1,6 @@
-// Service worker Reworked Notes: app disponibile anche senza rete.
+// Service worker Vaghezze Notes: app disponibile anche senza rete.
 // Cambia CACHE a ogni nuova versione: la vecchia cache viene cancellata.
-const CACHE = 'reworked-notes-v3';
+const CACHE = 'vaghezze-notes-v4';
 const ASSETS = [
   './', './index.html', './styles.css', './app.js', './install.js', './install.css', './nav.js', './nav.css', './manifest.json',
   './icon.svg', './favicon-32.png', './icon-192.png', './icon-512.png', './icon-maskable-192.png', './icon-maskable-512.png',
