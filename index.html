@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Reworked Notes · Idee di abbigliamento reworked al volo</title>
+  <meta name="description" content="Annota al volo le idee per capi reworked, con tipo di capo, stile e foto di ispirazione. Funziona anche senza rete.">
+  <meta name="application-name" content="Reworked Notes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Reworked Notes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1d27">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="install.css">
+</head>
+<body>
+  <header>
+    <div class="head-title">
+      <h1>Reworked Notes</h1>
+      <span id="count" class="count"></span>
+    </div>
+    <button type="button" id="installBtn" class="install-btn" hidden aria-label="Metti Reworked Notes nella schermata Home">⤓ Metti in home</button>
+  </header>
+
+  <main class="container">
+    <div class="card" id="formCard">
+      <label for="ideaText">Nuova idea</label>
+      <textarea id="ideaText" placeholder="Descrivi l’idea al volo...&#10;es. giacca denim cropped con tasche asimmetriche da jeans thrift, stile deconstructed..."></textarea>
+
+      <label for="itemType">Tipo di capo</label>
+      <select id="itemType">
+        <option value="">— Seleziona —</option>
+        <option>Giacca denim</option>
+        <option>Jeans / pantaloni</option>
+        <option>Felpa / hoodie</option>
+        <option>Camicia</option>
+        <option>Abito</option>
+        <option>Borsa / accessorio</option>
+        <option>Altro</option>
+      </select>
+
+      <label for="style">Stile</label>
+      <select id="style">
+        <option value="">— Seleziona —</option>
+        <option>Streetwear Deconstructed</option>
+        <option>Patchwork Zero-Waste</option>
+        <option>Minimalist Reworked</option>
+        <option>Thrift Chic</option>
+        <option>Y2K</option>
+        <option>Utility</option>
+      </select>
+
+      <label for="photo">Foto ispirazione (opzionale)</label>
+      <input type="file" id="photo" accept="image/*">
+
+      <button id="saveBtn">Salva idea</button>
+      <p class="hint">Le idee restano solo su questo telefono, anche senza rete.</p>
+    </div>
+
+    <div id="ideasList"></div>
+    <button type="button" id="exportBtn" class="secondary" hidden>Copia tutte le idee</button>
+  </main>
+
+  <footer class="pigi-footer">
+    <p><strong>Pi.Gi Service</strong> · Via Guido Reni 8, 35133 Padova (PD) · P.IVA 05770260288</p>
+    <p><a href="mailto:info@pigiservice.com">info@pigiservice.com</a> · PEC <a href="mailto:pigiservice@pec.it">pigiservice@pec.it</a> · <a href="tel:+393520966114">+39 352 0966114</a></p>
+    <p class="pigi-links"><a href="privacy.html">Privacy</a> · <a href="termini.html">Termini</a> · <a href="cookie.html">Cookie</a></p>
+  </footer>
+
+  <button class="fab" id="fab" aria-label="Nuova idea">+</button>
+
+  <div class="install-sheet" id="installSheet" hidden role="dialog" aria-modal="true" aria-labelledby="installTitle">
+    <div class="install-card">
+      <h2 id="installTitle">Metti <span data-appname></span> in home</h2>
+      <div data-ios>
+        <ol>
+          <li>In Safari tocca <strong>Condividi</strong> <span aria-hidden="true">(il quadrato con la freccia in su)</span>.</li>
+          <li>Scegli <strong>«Aggiungi alla schermata Home»</strong>.</li>
+          <li>Tocca <strong>Aggiungi</strong>.</li>
+        </ol>
+        <p class="install-note">Così <span data-appname></span> sta in home come le altre app e funziona anche senza rete.</p>
+      </div>
+      <div data-other hidden>
+        <ol>
+          <li>Apri il menu del browser <span aria-hidden="true">(⋮ in alto a destra)</span>.</li>
+          <li>Scegli <strong>«Installa app»</strong> o <strong>«Aggiungi a schermata Home»</strong>.</li>
+        </ol>
+        <p class="install-note">Funziona meglio con Chrome, Edge o Samsung Internet.</p>
+      </div>
+      <button type="button" class="secondary" data-close>Ho capito</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="install.js"></script>
+</body>
+</html>
