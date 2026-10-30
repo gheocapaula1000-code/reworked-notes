@@ -1,6 +1,6 @@
 // Service worker Vaghezze Notes: app disponibile anche senza rete.
 // Cambia CACHE a ogni nuova versione: la vecchia cache viene cancellata.
-const CACHE = 'vaghezze-notes-v11';
+const CACHE = 'vaghezze-notes-v12';
 const ASSETS = [
   './', './index.html', './styles.css', './app.js', './install.js', './install.css', './pull-to-refresh.js', './update-banner.js', './nav.js', './nav.css', './manifest.json',
   './icon.svg', './favicon.ico', './favicon-v4-16.png', './favicon-v4-32.png', './favicon-v4-48.png', './icon-v4-192.png', './icon-v4-512.png', './icon-v4-maskable-192.png', './icon-v4-maskable-512.png',

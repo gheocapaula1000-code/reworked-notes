@@ -1,4 +1,4 @@
-/* Banner «C'è una nuova versione dell'app»: uno per pubblicazione, «Aggiorna ora» = hard refresh (dati salvati restano). Generato da updateBanner.ts */
+/* Banner «Nuova Versione disponibile»: uno per pubblicazione, «Aggiorna» = hard refresh (dati salvati restano). Generato da updateBanner.ts */
 (() => {
   // hardPullToRefresh.ts
   var REFRESH_PARAM = "_aggiorna";
@@ -213,9 +213,9 @@
     const interval = (_a = options.intervalMs) != null ? _a : 5 * 60 * 1e3;
     const blockedPaths = (_b = options.blockedPaths) != null ? _b : DEFAULT_BLOCKED;
     const L = {
-      title: "C'\xE8 una nuova versione dell'app",
-      text: "Tocca \xABAggiorna ora\xBB: i tuoi dati restano.",
-      button: "Aggiorna ora",
+      title: "Nuova Versione disponibile",
+      text: "Tocca Aggiorna per caricare subito la nuova versione. I tuoi dati restano.",
+      button: "Aggiorna",
       updating: "Aggiorno\u2026",
       close: "Chiudi",
       ...options.labels
